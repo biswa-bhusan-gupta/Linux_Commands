@@ -1,0 +1,129 @@
+Linux : [Command Options Arguments]
+
+# : In Root 
+$ : In User 
+uname : Current OS
+uname -sr : Current Version of OS
+uname -a : All details related to OS
+apt-get update && apt-get upgrade : Update and Upgrade of Current Operating System
+apt-get install r -y : Install Given Application ; r --> Application Name , -y -> Yes
+apt-get remove r : Remove Given Application
+apt-get remove r : Remove Complete Confirguration of Application
+apt-get autoremove : Remove all Dependencies of Application
+/etc/init.d/ApplicationName status : Check Installed Application Status
+/etc/init.d/ApplicationName start : Start Installed Application
+systemctl enable r : Enable Application Service
+systemctl status r : Check status of Application Service
+systemctl stop r : Stop Application Service
+systemctl restart r : Restart Application Service
+uname : Name of Operating System (Linux)
+man : Manual
+/etc : Central Location of all Linux Systems Confirguration Files
+cat /etc/passwd : Shows Lists of Users,Passwords,IDs and Current Group
+cat /etc/group : Shows Lists of Groups and IDs  
+du : Shows size of a Directory/File
+-a : All
+-r : Recursive
+ls : Shows Lists of Files
+ll : Long Lists of Files
+mkdir x : Make Directory
+rmdir x : Remove Directory
+history : Shows all the commands that have been typed
+clear : Clears Screen
+man uname : Shows Instructions
+ls -l : Long List of Files
+ls -l -a / ls -la : Shows long list of Files including hidden files
+cd : Change Directory
+cd ~ : Switch to Home Directory of Particular User
+cd - : Switch back to previous Working Directory
+cd .. : Go back to previous Directory 
+pwd : Present Working Directory
+echo : Shows texts on screen
+touch File1.txt : Create a New File
+cp File1.txt File2.txt : Create a Copy of File1 into File2 
+man cp : Shows all Basic Instructions related to Copy
+vi(vim) ~/File1.txt : Opens Editor and Edits File
+:wq! : Exit from Editor
+nano ~/File1.txt  or nano ./File.txt: Opens Editor and Edits File
+cat File1.txt : Shows Text inside File
+ls /usr/bin : Shows all Commands
+whoami : Shows Current Username
+su Biswa : Change User
+su - Biswa : Changes from Root to User
+su - / su root / su : Changes to Root User
+exit : To exit from current user
+sudo : Super User Do (Login as Root User)
+cd /etc
+sudo visudo : Edit Sudoers File and Provides Specific Access to Particular User
+sudoedit /etc/hosts
+chmod Code FileName : Change of Permission to File/Folder
+
+CHMOD
+
+I. Octal :      Owner -> r(4) w(2) e(1)
+                   Group -> r(4) w(2) e(1)
+                   Other -> r(4) w(2) e(1)
+
+Ex : chmod 777 Text.txt : Owner(4+2+1) Group(4+2+1) Other(4+2+1)
+
+  
+II. Symbolic :
+            Syntax : chmod Reference Operator Mode FileName
+
+References :   u - Owner of File
+                      g - Member of Files Group
+                      o - Others
+                      a - All ugo
+
+Operator : + : Adds Mode to Specified Class
+                  - : Removes Mode 
+                  = : Exact Mode to Specified Class
+
+ Mode :      r : Read
+                  w : Write
+                  x : Execute
+
+ Ex : chmod u+x Text.txt -> chmod g+rw Text.txt      
+
+
+
+Users and Groups
+
+su x : Switch User
+su - x : Switch from Root to User
+su - / su root /su : Switch to Root
+sudo : Super User do (Makes Current User as Root User) 
+
+
+-g : Primary Group
+-G : Secondary Group
+
+For User : 
+Create User : useradd x   x --> User Name
+Password : passwd x  
+Delete User : userdel x    
+Display Users : cat /etc/passwd
+Display Particular User : cat /etc/passwd | grep x
+
+Ex : Alvin : x : 1000 : 1001 : : /home/Alvin : /bin/sh
+User Name -> Alvin
+x -> Password
+1000 -> User ID
+1001 -> Group ID
+/home/Alvin : Home Directory of User
+/bin/sh : Shell Access
+ 
+
+For Group :
+Create Group : groupadd y   y --> User Group
+Delete Group : groupdel y  
+
+Add New User to a Group : useradd -G groupname username
+Add Current User to a Group : usermod -G groupname username 
+
+
+
+Managing Storage in Linux 
+
+lsblk : Number of Harddisks present in Operating System
+fdisk /dev/sdb : fdisk -> Format/Fixed Disk , dev -> Device , sdb -> Name of Hard Disk
