@@ -52,7 +52,7 @@ su Biswa : Change User
 su - Biswa : Changes from Root to User
 su - / su root / su : Changes to Root User
 exit : To exit from current user
-sudo : Super User Do (Login as Root User)
+sudo : Super User Do (Login as Root User) / Super Privilege User
 cd /etc
 sudo visudo : Edit Sudoers File and Provides Specific Access to Particular User
 sudoedit /etc/hosts
